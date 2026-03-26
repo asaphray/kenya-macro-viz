@@ -1,8 +1,8 @@
 kenya-macro-viz/
 ├── .streamlit/
-│   └── config.toml          # Custom theme colors (Marketing flair!)
+│   └── config.toml          # Custom theme colors 
 ├── data/
-│   └── cleaned/             # Keep your CSVs here
+│   └── cleaned/             # CSVs 
 ├── modules/
 │   ├── __init__.py
 │   ├── data_loader.py       # Centralized pandas loading logic
