@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+venv/
+.env
+
+# Streamlit
+.streamlit/config.toml
+
+# Data (Optional: ignore if files are too large for GitHub)
+# data/cleaned/*.csv

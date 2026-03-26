@@ -1,4 +1,7 @@
 streamlit
 pandas
 plotly
+nbformatstreamlit
+pandas
+plotly
 nbformat
