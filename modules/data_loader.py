@@ -38,7 +38,20 @@ def load_and_clean_data():
 
     # 3. Inflation Cleaning
     df_inf = pd.read_csv(os.path.join(path, "inflation.csv"))
-    df_inf['month_num'] = df_inf['Month'].map(month_map)
+    
+    # Standardize column names to avoid KeyErrors
+    df_inf.columns = df_inf.columns.str.strip().str.lower()
+    
+    # Updated mapping using lowercase 'month'
+    if 'month' in df_inf.columns:
+        df_inf['month_num'] = df_inf['month'].map(month_map)
+    else:
+        # Fallback if the column is already numeric or named differently
+        st.error("Could not find Month column in inflation.csv")
+        
+    # Standardize Year column name
+    df_inf = df_inf.rename(columns={'year': 'Year'}) 
+    
     df_inf['date'] = pd.to_datetime(df_inf['Year'].astype(str) + '-' + 
                                    df_inf['month_num'].astype(str) + '-01')
     
